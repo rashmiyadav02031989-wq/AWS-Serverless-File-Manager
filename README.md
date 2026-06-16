@@ -30,31 +30,34 @@ flowchart TD
 
     U -. Direct Upload/Download .-> S3D
 ```
-Features
-Upload files using S3 pre-signed URLs
-View uploaded files
-Download files securely
-Delete files
-Responsive web interface
-Fully serverless architecture
-AWS Services Used
-Amazon Web Services
-Amazon S3
-AWS Lambda
-Amazon API Gateway
-Amazon CloudFront
-Workflow
-User accesses the web application through CloudFront.
-The frontend requests a pre-signed upload URL from API Gateway.
-Lambda generates the pre-signed URL.
-The browser uploads the file directly to the S3 uploads bucket.
-Users can list, download, and delete files using additional API endpoints backed by Lambda.
-Security
-Files are uploaded directly to S3 using time-limited pre-signed URLs.
-CloudFront is used to securely distribute the frontend.
-No long-term AWS credentials are exposed in the browser.
-Screenshots to Upload
-Include screenshots of:
+# Features:   
+-Upload files using S3 pre-signed URLs  
+-View uploaded files  
+-Download files securely  
+-Delete files  
+-Responsive web interface  
+-Fully serverless architecture  
+
+# AWS Services Used:  
+-Amazon Web Services  
+-Amazon S3  
+-AWS Lambda  
+-Amazon API Gateway   
+-Amazon CloudFront  
+
+# Workflow:  
+-User accesses the web application through CloudFront.  
+-The frontend requests a pre-signed upload URL from API Gateway.  
+-Lambda generates the pre-signed URL.  
+-The browser uploads the file directly to the S3 uploads bucket.  
+-Users can list, download, and delete files using additional API endpoints backed by Lambda.  
+
+# Security:  
+-Files are uploaded directly to S3 using time-limited pre-signed URLs.   
+-CloudFront is used to securely distribute the frontend.  
+-No long-term AWS credentials are exposed in the browser.  
+
+# Screenshots:  
 Home page
 File upload
 Uploaded files list
