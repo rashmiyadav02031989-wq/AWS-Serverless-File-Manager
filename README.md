@@ -60,7 +60,7 @@ flowchart TD
 ## Screenshots:     
 ### Website Homepage
 
-![Website Homepage](website-homepage.jpg)
+![Website Homepage](screenshots/website-homepage.jpg)
 
 ### File upload
 ### Uploaded files list
