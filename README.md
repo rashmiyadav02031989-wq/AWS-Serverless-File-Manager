@@ -30,29 +30,6 @@ flowchart TD
 
     U -. Direct Upload/Download .-> S3D
 ```
-```mermaid
-flowchart TD
-    U[User Browser] --> CF[CloudFront]
-
-    CF --> S3F[S3 Frontend Bucket<br/>index.html]
-
-    S3F --> APIGW[API Gateway]
-
-    APIGW --> UL[Upload Lambda]
-    APIGW --> LL[List Lambda]
-    APIGW --> DL[Delete Lambda]
-    APIGW --> DNL[Download Lambda]
-
-    UL --> S3D[S3 Files Bucket]
-    LL --> S3D
-    DL --> S3D
-    DNL --> S3D
-
-    UL -. Pre-signed Upload URL .-> U
-    DNL -. Pre-signed Download URL .-> U
-
-    U -. Direct Upload/Download .-> S3D
-```  
 Features
 Upload files using S3 pre-signed URLs
 View uploaded files
