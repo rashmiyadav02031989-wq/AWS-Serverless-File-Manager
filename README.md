@@ -57,10 +57,13 @@ flowchart TD
 -CloudFront is used to securely distribute the frontend.  
 -No long-term AWS credentials are exposed in the browser.  
 
-# Screenshots:  
-Home page
-File upload
-Uploaded files list
-Download functionality
-Delete functionality
+# Screenshots:     
+## Website Homepage
+
+![Website Homepage](website-homepage.jpg)
+
+## File upload
+## Uploaded files list
+## Download functionality
+## Delete functionality
 AWS architecture diagram (optional but highly recommended)
