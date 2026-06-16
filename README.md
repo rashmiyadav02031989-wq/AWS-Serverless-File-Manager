@@ -2,22 +2,31 @@
 # Overview  
 A serverless file management application that allows users to upload, list, download, and delete files through a web interface using Amazon S3 pre-signed URLs.  
 # Architecture  
-```mermaid. 
+```mermaid
 flowchart TD
     U[User Browser] --> CF[CloudFront]
     CF --> S3F[S3 Frontend Bucket<br/>index.html]
     S3F --> APIGW[API Gateway]
 
-    APIGW --> UL[Upload Lambda]
-    APIGW --> LL[List Lambda]
-    APIGW --> DL[Delete Lambda]
+    subgraph "Lambda Functions"
+        direction LR
+        UL[Upload Lambda]
+        LL[List Lambda]
+        DL[Delete Lambda]
+    end
 
-    UL --> S3D[S3 Files Bucket]
+    APIGW --> UL
+    APIGW --> LL
+    APIGW --> DL
+
+    S3D[S3 Files Bucket]
+
+    UL --> S3D
     LL --> S3D
     DL --> S3D
 
-    LL -. Returns pre-signed download URLs .-> U
-    UL -. Returns pre-signed upload URL .-> U
+    UL -. Pre-signed Upload URL .-> U
+    LL -. Pre-signed Download URLs .-> U
 
     U -. Direct Upload/Download .-> S3D
 ```
