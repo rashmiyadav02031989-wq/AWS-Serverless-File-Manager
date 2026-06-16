@@ -2,7 +2,7 @@
 # Overview  
 A serverless file management application that allows users to upload, list, download, and delete files through a web interface using Amazon S3 pre-signed URLs.  
 # Architecture  
-````mermaid. 
+```mermaid. 
 flowchart TD
     U[User Browser] --> CF[CloudFront]
     CF --> S3F[S3 Frontend Bucket<br/>index.html]
@@ -20,6 +20,7 @@ flowchart TD
     UL -. Returns pre-signed upload URL .-> U
 
     U -. Direct Upload/Download .-> S3D
+```
 ```mermaid
 flowchart TD
     U[User Browser] --> CF[CloudFront]
