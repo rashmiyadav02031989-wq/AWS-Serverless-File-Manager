@@ -47,19 +47,19 @@ flowchart TD
 -Fully serverless architecture  
 
 ## Implementation Steps:  
-** Step1 :   
+**Step1 :**   
  Created an S3 bucket to store uploaded files and a separate S3 bucket to host the frontend.  
- ### Step 2:  
+ **Step 2:**  
  Developed the frontend (`index.html`) for file upload, listing, download, and deletion.  
-### Step 3:  
+**Step 3:**  
 Created Lambda functions for generating pre-signed upload URLs, listing files with download URLs, and deleting files.  
-### Step 4:  
-Configured API Gateway routes and integrated them with the Lambda functions.  
-### Step 5:  
+**Step 4:**  
+Configured API Gateway routes and integrated them with the Lambda functions. 
+**Step 5:**  
 Enabled CORS for seamless communication between the frontend and backend services.  
-### Step 6:  
+**Step 6:**  
 Deployed the frontend to S3 and configured CloudFront for secure content delivery.  
-### Step 7:
+**Step 7:**
 Tested end-to-end functionality, including upload, download, list, and delete operations.  
 
 ## Security Best Practises:  
