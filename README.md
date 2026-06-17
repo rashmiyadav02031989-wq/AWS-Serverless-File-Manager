@@ -109,7 +109,7 @@ AWS-Serverless-File-Manager/
 ├── README.md   
 ├── index.html  
 ├── screenshots/  
-        └── file-list.png  
+>└── file-list.png  
         └── file-upload.png  
         └── file4-download.png  
         └── file4-downloaded.png  
