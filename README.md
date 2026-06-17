@@ -1,6 +1,6 @@
 # AWS-Serverless-File-Manager
 ## Overview  
-A serverless file management application that allows users to upload, list, download, and delete files through a web interface using Amazon S3 pre-signed URLs.  
+A serverless file management application that allows users to upload, list, download, and delete files through a web interface using Amazon S3, Lambda, API Gateway and pre-signed URLs.  
 ## Architecture  
 ```mermaid
 flowchart TD
