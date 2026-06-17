@@ -92,4 +92,30 @@ Tested end-to-end functionality, including upload, download, list, and delete op
 
 ![Website Homepage](screenshots/files-after-delete.png)  
 
+## Project Outcome:   
+Built a fully serverless file management application that enables secure file operations without exposing AWS credentials by leveraging Amazon S3 pre-signed URLs.    
+
+## Skills Demonstrated:   
+-AWS S3  
+-AWS CloudFront    
+-API Gateways  
+-Lambda
+-IAM Roles  
+-Static Website Hosting  
+-Cloud Security  
+
+## Repository Structure:   
+AWS-Serverless-File-Manager/    
+├── README.md   
+├── index.html  
+├── screenshots/  
+        └── file-list.png  
+        └── file-upload.png  
+        └── file4-download.png  
+        └── file4-downloaded.png  
+        └── file5-deleted.png  
+        └── files-after-delete.png  
+        └── website-homepage.png  
+
+
 
