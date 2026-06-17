@@ -47,7 +47,7 @@ flowchart TD
 -Fully serverless architecture  
 
 ## Implementation Steps:  
-### Step1 :   
+** Step1 :   
  Created an S3 bucket to store uploaded files and a separate S3 bucket to host the frontend.  
  ### Step 2:  
  Developed the frontend (`index.html`) for file upload, listing, download, and deletion.  
