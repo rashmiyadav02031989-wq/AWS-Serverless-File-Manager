@@ -110,12 +110,12 @@ AWS-Serverless-File-Manager/
 ├── index.html  
 ├── screenshots/  
 >└── file-list.png  
-        └── file-upload.png  
-        └── file4-download.png  
-        └── file4-downloaded.png  
-        └── file5-deleted.png  
-        └── files-after-delete.png  
-        └── website-homepage.png  
+>└── file-upload.png  
+>└── file4-download.png  
+>└── file4-downloaded.png  
+>└── file5-deleted.png  
+>└── files-after-delete.png  
+>└── website-homepage.png  
 
 
 
