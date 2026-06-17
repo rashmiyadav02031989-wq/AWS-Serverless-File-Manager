@@ -88,7 +88,7 @@ Tested end-to-end functionality, including upload, download, list, and delete op
 
 ### Delete functionality  
 
-![Website Homepage](screenshots/file5-delete.png)  
+![Website Homepage](screenshots/file5-deleted.png)  
 
 ![Website Homepage](screenshots/files-after-delete.png)  
 
