@@ -72,11 +72,14 @@ flowchart TD
 
 ### Download functionality  
 
-![Select File To Download](screenshots/file-download.png)  
+![Select File To Download](screenshots/file4-download.png)   
 
-![Downloaded File](screenshots/file-downloaded.png)
+![Downloaded File](screenshots/file4-downloaded.png)  
 
 ### Delete functionality  
 
-![Website Homepage](screenshots/file-delete.png)
+![Website Homepage](screenshots/file5-delete.png)  
+
+![Website Homepage](screenshots/files-after-delete.png)  
+
 
