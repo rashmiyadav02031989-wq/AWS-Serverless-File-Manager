@@ -1,0 +1,352 @@
+<html>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    background: linear-gradient(to right, #e3f2fd, #fce4ec);
+  }
+
+  h2 {
+    margin-bottom: 10px;
+    color: #444;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 0 15px;
+    
+  }
+
+  .card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    align-items: center;
+  }
+
+  input[type="file"] {
+    margin-bottom: 10px;
+  }
+
+	.center-btn {
+  		display: flex;
+  		justify-content: center;
+ 		margin-bottom: 15px;
+	}
+
+
+  button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #e3f2fd, #fce4ec);
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  button:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+  }
+
+  .file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    background: #f8fbff;
+    border: 1px solid #e0e7ff;
+    transition: 0.2s;
+  }
+
+  .file-item:hover {
+    background: #eef4ff;
+  }
+
+  .file-name {
+    font-size: 14px;
+    color: #333;
+    word-break: break-word;
+  }
+
+  .download-btn {
+    background: linear-gradient(to right, #e3f2fd, #fce4ec);
+  }
+
+  .download-btn:hover {
+    opacity: 0.9;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #444;
+  }
+
+
+.upload-box {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+
+.upload-area {
+  border: 2px dashed #7aa7ff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+  background: linear-gradient(135deg, #f8fbff, #eef4ff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-area:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, #eaf3ff, #e0ecff);
+}
+
+.text {
+  font-size: 14px;
+  color: #444;
+  font-weight: 500;
+}
+
+.filename {
+  font-size: 12px;
+  color: #777;
+}
+
+
+.upload-area.selected .filename {
+  color: #2c7be5;
+  font-weight: 500;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">My File Manager</div>
+
+  <!-- Upload -->
+  <div class="card">
+    <h2 style="text-align: center;">Upload File</h2>
+   
+
+  <div class="upload-box">
+  <input type="file" id="fileInput" hidden>
+
+  <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+
+
+    <!-- Upload Icon -->
+    <div class="icon">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+        <path d="M12 16V4" stroke="#4a90e2" stroke-width="2" stroke-linecap="round"/>
+        <path d="M8 8l4-4 4 4" stroke="#4a90e2" stroke-width="2" stroke-linecap="round"/>
+        <path d="M4 16v4h16v-4" stroke="#4a90e2" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div class="text">Tap to choose a file</div>
+    <div id="fileName" class="filename">No file selected</div>
+  </div>
+
+  <button onclick="uploadFile()">Upload</button>
+</div>
+</div>
+<!-- Files -->
+
+  <div class="card">
+    <h2 style="text-align: center;">Files</h2>
+	<div class="center-btn">
+    <button style="text-align: center;" onclick="loadFiles()">Show Files</button>
+</div>
+    <div id="fileList"></div>
+  </div>
+</div>
+
+
+<script>
+
+//--------display selected file in upload area------
+
+document.getElementById("fileInput").addEventListener("change", function () {
+  const file = this.files[0];
+
+  const fileNameDiv = document.getElementById("fileName");
+
+  if (file) {
+    fileNameDiv.textContent = file.name;
+
+    // Optional: highlight box when file selected
+    document.querySelector(".upload-area").style.borderColor = "black";
+	 document.querySelector(".upload-area").style.background = "linear-gradient(to right, #e3f2fd, #fce4ec)";
+  } else {
+    fileNameDiv.textContent = "No file selected";
+  }
+});
+
+
+const BASE_URL = "https://8bj71kza2b.execute-api.us-east-1.amazonaws.com";
+
+// -------- Upload --------
+
+
+async function uploadFile() {
+  const file = document.getElementById("fileInput").files[0];
+
+  if (!file) {
+    alert("Select a file first");
+    return;
+  }
+
+document.getElementById("fileInput").addEventListener("change", function () {
+  const file = this.files[0];
+  document.getElementById("fileName").textContent =
+    file ? file.name : "No file selected";
+});
+
+
+
+  try {
+    const res = await fetch(
+      BASE_URL + "/upload?filename=" + encodeURIComponent(file.name)
+    );
+
+    const data = await res.json();
+
+    const uploadRes = await fetch(data.uploadUrl, {
+      method: "PUT",
+      body: file,
+      headers: {
+        "Content-Type": file.type || "application/octet-stream"
+      }
+    });
+
+    if (uploadRes.status === 200) {
+      alert("Uploaded successfully");
+		document.getElementById("fileInput").value = "";
+		document.getElementById("fileName").textContent = "No file selected";
+      //loadFiles();
+    } else {
+      alert("Upload failed");
+    }
+
+  } catch (err) {
+    alert("Upload error: " + err.message);
+  }
+}
+
+// -------- List Files --------
+
+
+async function loadFiles() {
+  try {
+    const res = await fetch(BASE_URL + "/list");
+    const data = JSON.parse(await res.text());
+
+    const list = document.getElementById("fileList");
+    list.innerHTML = "";
+
+    data.forEach(file => {
+      if (file.key === "upload/") return;
+
+      const name = file.key.replace("upload/", "");
+
+      const item = document.createElement("div");
+      item.className = "file-item";
+
+      const fileName = document.createElement("div");
+      fileName.className = "file-name";
+      fileName.textContent = name;
+
+
+//--------download buttons
+
+      const btn = document.createElement("button");
+      btn.className = "download-btn";
+      btn.textContent = "Download";
+
+      btn.onclick = () => {
+        window.location.href = file.url;
+      };
+      item.appendChild(fileName);
+      item.appendChild(btn);
+
+      list.appendChild(item);
+
+
+//------delete buttons-------
+
+const deleteBtn = document.createElement("button");
+deleteBtn.textContent = "Delete";
+deleteBtn.className= "download-btn"
+
+deleteBtn.onclick = () => deleteFile(file.key);
+
+item.appendChild(deleteBtn);
+
+
+
+
+      
+    });
+
+  } catch (err) {
+    alert("Error: " + err.message);
+  }
+}
+
+//-------Delete Files------
+
+
+async function deleteFile(key) {
+  const confirmDelete = confirm("Delete this file?");
+  if (!confirmDelete) return;
+
+  try {
+//alert(BASE_URL+"/delete?key="+encodeURIComponent(key));
+
+    const res = await fetch(
+      BASE_URL + "/delete?key=" + encodeURIComponent(key)
+    );
+	//alert("delete fn res.status="+res.status);
+    const data = JSON.parse(await res.text());
+
+    alert("File deleted");
+    loadFiles(); // refresh list
+
+  } catch (err) {
+    alert("Delete error: " + err.message);
+  }
+}
+</script>
+</head>
+</body>
+</html>
