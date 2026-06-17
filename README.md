@@ -62,8 +62,21 @@ flowchart TD
 
 ![Website Homepage](screenshots/website-homepage.png)
 
-### File upload
-### Uploaded files list
-### Download functionality
-### Delete functionality
-AWS architecture diagram (optional but highly recommended)
+### File upload  
+
+![File Upload](screenshots/file-upload.png)  
+
+### Uploaded files list  
+
+![Uploaded Files](screenshots/file-list.png)  
+
+### Download functionality  
+
+![Select File To Download](screenshots/file-download.png)  
+
+![Downloaded File](screenshots/file-downloaded.png)
+
+### Delete functionality  
+
+![Website Homepage](screenshots/file-delete.png)
+
