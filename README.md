@@ -105,7 +105,11 @@ Built a fully serverless file management application that enables secure file op
 -Cloud Security  
 
 ## Repository Structure:   
-AWS-Serverless-File-Manager/    
+AWS-Serverless-File-Manager/
+├── lambda
+>└──
+>└──
+>└── 
 ├── README.md   
 ├── index.html  
 ├── screenshots/  
