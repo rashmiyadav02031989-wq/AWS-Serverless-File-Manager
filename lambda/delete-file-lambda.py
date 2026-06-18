@@ -3,7 +3,7 @@ import boto3
 import urllib.parse
 
 s3 = boto3.client("s3")
-BUCKET = "serverless-storage-app-bucket"
+BUCKET = "Your-S3-Bucket-Name"
 
 def lambda_handler(event, context):
 
