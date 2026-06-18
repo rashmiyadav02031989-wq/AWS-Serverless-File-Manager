@@ -10,6 +10,7 @@ A serverless file management application that allows users to upload, list, down
 - CDN: CloudFront
   
 ## Architecture  
+The application uses a fully serverless workflow where the frontend interacts with API Gateway, which triggers Lambda functions to generate pre-signed URLs and perform S3 operations.    
 ```mermaid
 flowchart TD
     U[User Browser] --> CF[CloudFront]
