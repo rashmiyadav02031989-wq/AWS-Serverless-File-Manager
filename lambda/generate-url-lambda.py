@@ -5,11 +5,11 @@ from botocore.config import Config
 
 s3 = boto3.client(
     "s3",
-    region_name="us-east-1",
+    region_name="Your region name",
     config=Config(signature_version="s3v4")
 )
 
-BUCKET = "serverless-storage-app-bucket"
+BUCKET = "Your-S3-Bucket-Name"
 
 def lambda_handler(event, context):
     # Handle preflight OPTIONS request
