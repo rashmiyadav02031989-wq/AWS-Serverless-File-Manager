@@ -1,6 +1,14 @@
 # AWS-Serverless-File-Manager
 ## Overview  
 A serverless file management application that allows users to upload, list, download, and delete files through a web interface using Amazon S3, Lambda, API Gateway and pre-signed URLs.  
+
+## Tech Stack
+- Frontend: HTML, CSS, JavaScript
+- Backend: AWS Lambda (Python)
+- Storage: Amazon S3
+- API Layer: API Gateway (HTTP API)
+- CDN: CloudFront
+  
 ## Architecture  
 ```mermaid
 flowchart TD
