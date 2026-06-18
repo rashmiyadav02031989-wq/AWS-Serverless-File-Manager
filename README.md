@@ -133,5 +133,11 @@ AWS-Serverless-File-Manager/
 ├── README.md
 └── index.html
 ```
+## Future Improvements
+- Add file preview functionality (images/PDFs)
+- Implement authentication using AWS Cognito
+- Add file versioning in S3
+- Enable drag-and-drop upload UI
+- Add file search and filtering
 
 
