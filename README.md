@@ -32,19 +32,19 @@ flowchart TD
 ```
 
 ## AWS Services Used:  
--Amazon Web Services  
--Amazon S3  
--AWS Lambda  
--Amazon API Gateway   
--Amazon CloudFront  
+- Amazon Web Services  
+- Amazon S3  
+- AWS Lambda  
+- Amazon API Gateway   
+- Amazon CloudFront  
 
 ## Features:   
--Upload files using S3 pre-signed URLs  
--View uploaded files  
--Download files securely  
--Delete files  
--Responsive web interface  
--Fully serverless architecture  
+- Upload files using S3 pre-signed URLs  
+- View uploaded files  
+- Download files securely  
+- Delete files  
+- Responsive web interface  
+- Fully serverless architecture  
 
 ## Implementation Steps:  
 **Step1 :**   
@@ -62,10 +62,10 @@ Deployed the frontend to S3 and configured CloudFront for secure content deliver
 **Step 7:**
 Tested end-to-end functionality, including upload, download, list, and delete operations.  
 
-## Security Best Practises:  
--Files are uploaded directly to S3 using time-limited pre-signed URLs.   
--CloudFront is used to securely distribute the frontend.  
--No long-term AWS credentials are exposed in the browser.  
+## Security Best Practices:  
+- Files are uploaded directly to S3 using time-limited pre-signed URLs.   
+- CloudFront is used to securely distribute the frontend.  
+- No long-term AWS credentials are exposed in the browser.  
 
 ## Screenshots:     
 ### Website Homepage
@@ -96,13 +96,13 @@ Tested end-to-end functionality, including upload, download, list, and delete op
 Built a fully serverless file management application that enables secure file operations without exposing AWS credentials by leveraging Amazon S3 pre-signed URLs.    
 
 ## Skills Demonstrated:   
--AWS S3  
--AWS CloudFront    
--API Gateways  
--Lambda
--IAM Roles  
--Static Website Hosting  
--Cloud Security  
+- AWS S3  
+- AWS CloudFront    
+- API Gateways  
+- Lambda
+- IAM Roles  
+- Static Website Hosting  
+- Cloud Security  
 
 ## Repository Structure: 
 
