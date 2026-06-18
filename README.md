@@ -76,7 +76,8 @@ Tested end-to-end functionality, including upload, download, list, and delete op
 - CloudFront is used to securely distribute the frontend.  
 - No long-term AWS credentials are exposed in the browser.  
 
-## Screenshots:     
+## Screenshots
+Below are key UI flows of the application:       
 ### Website Homepage
 
 ![Website Homepage](screenshots/website-homepage.png)
