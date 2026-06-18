@@ -88,7 +88,7 @@ Below are key UI flows of the application:
 
 ### Uploaded files list  
 
-![Uploaded Files](screenshots/file-list.png)  
+![Uploaded Files List](screenshots/file-list.png)  
 
 ### Download functionality  
 
@@ -98,9 +98,9 @@ Below are key UI flows of the application:
 
 ### Delete functionality  
 
-![Website Homepage](screenshots/file5-deleted.png)  
+![File Delete](screenshots/file5-deleted.png)  
 
-![Website Homepage](screenshots/files-after-delete.png)  
+![File's List After Deletion](screenshots/files-after-delete.png)  
 
 ## Project Outcome:   
 Built a fully serverless file management application that enables secure file operations without exposing AWS credentials by leveraging Amazon S3 pre-signed URLs.    
